@@ -1,5 +1,4 @@
-
-public class Calendar1 {
+public class Calendar {
 	// Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;
 	static int month = 1;
@@ -19,17 +18,19 @@ public class Calendar1 {
 		// prints "Sunday".
 		// The following variable, used for debugging purposes, counts how many days
 		// were advanced so far.
-		int x = Integer.parseInt(args[0]);
-		int stop = 0;
+		int yearprint = Integer.parseInt(args[0]);
 		int dayInTheWeek = 2;
 		int yearCounter = year;
 		int monthCounter = month;
 		int dayCounter = dayOfMonth;
-		int amazing = 0;
 
-		while ((yearCounter < 2000) && (stop < x)) {
+		advance(dayCounter, monthCounter, yearCounter, dayInTheWeek);
 
-			advance(dayCounter, monthCounter, yearCounter, dayInTheWeek);
+		while ((yearCounter <= yearprint)) {
+			if (yearCounter == yearprint) {
+				advance(dayCounter, monthCounter, yearCounter, dayInTheWeek);
+			}
+
 			if (dayCounter < nDaysInMonth(monthCounter, yearCounter)) {
 				dayCounter++;
 				dayInTheWeek++;
@@ -44,20 +45,14 @@ public class Calendar1 {
 					yearCounter++;
 				}
 
-				if ((dayCounter == 1) && (dayInTheWeek == 1)) {
-					amazing++;
-				}
-
 			}
 			if (dayInTheWeek == 8) {
 				dayInTheWeek = 1;
 			}
 			if ((dayCounter == 1) && (dayInTheWeek == 1)) {
-				amazing++;
+
 			}
-			stop++;
 		}
-		System.out.println("During the 20th century, " + amazing + " Sundays fell on the first day of the month");
 	}
 
 	// Advances the date (day, month, year) and the day-of-the-week.
