@@ -38,8 +38,9 @@ public class LoanCalc {
 		double high = loan;
 		double mid = (high + low) / 2;
 		double did = endBalance(loan, rate, n, mid);
+		boolean b = Math.abs(did) > epsilon;
 
-		while (Math.abs(did) > epsilon) {
+		while (b) {
 			iterationCounter++;
 			if (did > 0) {
 				low = mid;
@@ -49,6 +50,7 @@ public class LoanCalc {
 			}
 			mid = (low + high) / 2;
 			did = endBalance(loan, rate, n, mid);
+			b = Math.abs(did) > epsilon;
 
 		}
 		return mid;
