@@ -34,23 +34,28 @@ public class LoanCalc {
 	}
 
 	public static double bisectionSolver(double loan, double rate, int n, double epsilon) {
+		iterationCounter = 0; 
 		double low = loan / n;
-		double high = loan;
+		double high = loan+1;
 		double mid = (high + low) / 2;
 		double did = endBalance(loan, rate, n, mid);
 		boolean b = Math.abs(did) > epsilon;
 
-		while (b) {
-			iterationCounter++;
-			if (did > 0) {
+		while (b)
+		 {
+			if (did > 0)
+		     {
 				low = mid;
 
-			} else {
+			}
+			else
+			 {
 				high = mid;
 			}
 			mid = (low + high) / 2;
 			did = endBalance(loan, rate, n, mid);
 			b = Math.abs(did) > epsilon;
+			iterationCounter++;
 
 		}
 		return mid;
