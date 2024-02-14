@@ -6,6 +6,7 @@ public class LoanCalc {
 
 		double loan = Double.parseDouble(args[0]);
 		double rate = Double.parseDouble(args[1]);
+		int a = 0 ; 
 		int n = Integer.parseInt(args[2]);
 		System.out.println("Loan sum = " + loan + ", interest rate = " + rate + "%, periods = " + n);
 
