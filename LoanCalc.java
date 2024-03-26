@@ -66,6 +66,6 @@ public class LoanCalc {
 			i++;
 
 		}
-		return loan;
+		return l;
 	}
 }
