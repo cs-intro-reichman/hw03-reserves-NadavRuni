@@ -1,5 +1,5 @@
 public class LoanCalc {
-	static double epsilon = 0.001;
+	static double epsilon = 0.0001;
 	static int iterationCounter;
 
 	public static void main(String[] args) {
