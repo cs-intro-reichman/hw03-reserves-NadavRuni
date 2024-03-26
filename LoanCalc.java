@@ -1,5 +1,5 @@
 public class LoanCalc {
-	static double epsilon = 0.00001;
+	static double epsilon = 0.001;
 	static int iterationCounter;
 
 	public static void main(String[] args) {
@@ -58,10 +58,11 @@ public class LoanCalc {
 
 	private static double endBalance(double loan, double rate, int n, double payment) {
 
+		double l=loan;
 		int i = 1;
 		while (i <= n) {
-			loan = (loan - payment);
-			loan = loan * ((rate / 100) + 1);
+			l = (l - payment);
+			loan = l * (1+rate / 100);
 			i++;
 
 		}
