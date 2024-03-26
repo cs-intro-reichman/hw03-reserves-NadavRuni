@@ -13,7 +13,7 @@ public class LoanCalc {
 		System.out.printf("%.2f", bruteForceSolver(loan, rate, n, epsilon));
 		System.out.println();
 		System.out.println("number of iterations: " + iterationCounter);
-		iterationCounter = -1; // Reset iteration counter.
+		iterationCounter = 0; // Reset iteration counter.
 
 		System.out.print("Periodical payment, using bi-section search: ");
 		System.out.printf("%.2f", bisectionSolver(loan, rate, n, epsilon));
