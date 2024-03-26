@@ -1,5 +1,5 @@
 public class LoanCalc {
-	static double epsilon = 0.01;
+	static double epsilon = 0.001;
 	static int iterationCounter;
 
 	public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class LoanCalc {
 		double loan = Double.parseDouble(args[0]);
 		double rate = Double.parseDouble(args[1]);
 		int n = Integer.parseInt(args[2]);
-		System.out.println("Loan sum = " + loan + ", interest rate = " + rate + "%, periods = " + n);
+		System.out.println("Loan sum = " + (int) loan + ", interest rate = " + (int) rate + "%, periods = " + n);
 
 		System.out.print("Periodical payment, using brute force: ");
 		System.out.printf("%.2f", bruteForceSolver(loan, rate, n, epsilon));
