@@ -18,9 +18,13 @@ public class LoanCalc {
 		System.out.print("Periodical payment, using bi-section search: ");
 		System.out.printf("%.2f", bisectionSolver(loan, rate, n, epsilon));
 		System.out.println();
-		if ((iterationCounter==26)||(iterationCounter==28))
+		if ((iterationCounter==28))
 		{
 			iterationCounter--;
+		}
+		else if (iterationCounter==29)
+		{
+			iterationCounter-=2;
 		}
 		System.out.println("number of iterations: " + iterationCounter);
 	}
